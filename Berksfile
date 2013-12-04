@@ -2,4 +2,7 @@ site :opscode
 
 metadata
 
-cookbook 'minitest-handler'
+group :integation do
+  cookbook 'minitest-handler'
+  cookbook "apt", github: "rackspace-cookbooks/apt"
+end
