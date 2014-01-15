@@ -5,7 +5,7 @@ license          'Apache 2.0'
 description      'Configure the system timezone on Linux systems'
 version          "1.0.0"
 
-recipe 'rackspace_time', 'Set time zone details on server'
+recipe 'rackspace-time', 'Set time zone details on server'
 
 replaces         "timezone"
 
