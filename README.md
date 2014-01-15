@@ -1,29 +1,20 @@
 Timezone II
 ===========
 
-The Timezone II cookbook contains recipes for installing the latest tzdata
+The Rackspace-time cookbook contains recipes for installing the latest tzdata
 (a.k.a. IANA or Olson) timezone database and setting the timezone on your
-system.  It is a fork of the [timezone cookbook by James
-Harton.](http://community.opscode.com/cookbooks/timezone)
+system.  It is a fork of the [timezone-ii cookbook by Larry
+Gilbert.](https://github.com/L2G/timezone-ii)
 
 Requirements
 ------------
 
-This cookbook is known to work with:
+This cookbook works with:
 
-* Amazon Linux
 * CentOS and RHEL
 * Debian
-* Fedora
-* Gentoo
-* PLD Linux
 * Ubuntu
 
-It _should_ work with any OS that uses the IANA/Olson timezone database and
-stores local timezone data in /etc/localtime (the only OS I know of that does
-_not_ do this is MS Windows).  However, some OSs not mentioned above have their
-own system utility for setting the timezone, and this may overwrite the changes
-made by this cookbook.
 
 Attributes
 ----------
@@ -67,78 +58,23 @@ Attributes
 Usage
 -----
 
-Set the "tz" attribute to your desired timezone and include the "timezone-ii"
+Set the "tz" attribute to your desired timezone and include the "rackspace-time"
 recipe in your node's run list:
 
     {
       "name": "my_node",
       "tz": "Africa/Timbuktu",
       "run_list": [
-        "recipe[timezone-ii]"
+        "recipe[rackspace-time]"
       ]
     }
 
 ### timezone-ii::default
 
 The default recipe will first install or upgrade the IANA/Olson
-timezone database package for your OS (`timezone-data` on Gentoo, `tzdata` on
-all others). Then it will call one of the recipes below according to your
-node's platform.
+timezone database package for your OS. Then it will configure the needed 
+setting based on your OS.
 
-### timezone-ii::debian
-
-This changes the timezone on Debian and Debian-derived systems by:
-
-1. writing the value of `tz` to `/etc/timezone`, then
-2. calling `dpkg-reconfigure tzdata`.
-
-Only the `tz` attribute is used; all others are ignored.
-
-### timezone-ii::fedora
-
-This changes the timezone on Fedora by calling `timedatectl set-timezone` with
-the value of `tz`.
-
-Only the `tz` attribute is used; all others are ignored.
-
-### timezone-ii::linux-generic
-
-This changes the time on all OSs without a more specific recipe. It assumes that
-the kernel gets data on the local timezone from `/etc/localtime`. (This is true
-for FreeBSD as well as Linux, so "linux-generic" is a bit of a misnomer.)
-
-What this recipe does:
-
-1. verifies that the value of `tz` corresponds with a timezone data file under
-   the directory specified in `timezone.tzdata_dir` (default:
-   `/usr/share/zoneinfo`), then
-2. creates a copy of or symbolic link to that data file in the path specified in
-   `timezone.localtime_path` (default: `/etc/localtime`).
-
-The truthiness of `timezone.use_symlink` (default: `false`) determines whether a
-symlink or a copy is made.
-
-### timezone-ii::pld
-
-This changes the timezone on PLD Linux. It writes the appropriate timezone
-configuration file, making use of the `tz` and `timezone.tz_datadir` attributes.
-Other attributes are ignored.
-
-### timezone-ii::rhel
-
-This changes the timezone on RedHat Enterprise Linux (RHEL) and CentOS.  It
-updates the `/etc/sysconfig/clock` file with the value of the `tz` attribute,
-then calls `tzdata-update` to change the timezone.  All node attributes other
-than `tz` are ignored.
-
-Contributing
-------------
-1. Fork the [repository on GitHub](https://github.com/L2G/timezone-ii)
-2. Create a named feature branch (like `add_component_x`)
-3. Write your change
-4. If at all possible, write test-kitchen tests for your change and ensure they
-   all pass
-5. Submit a pull request using GitHub
 
 Acknowledgements
 ----------------
@@ -146,8 +82,7 @@ Acknowledgements
 Thanks to:
 
 * James Harton, for launching the timezone cookbook
-* Elan Ruusamäe, for PLD support
-* Mike Conigliaro, for bringing testing up to date
+* Larry Gilbert for the timezone-ii cookbook
 * "fraD00r4", for RHEL/CentOS support
 
 
@@ -158,6 +93,7 @@ Copyright © 2010 James Harton <james@sociable.co.nz>
 Copyright © 2013 Lawrence Leonard Gilbert <larry@L2G.to>         
 Copyright © 2013 Elan Ruusamäe <glen@delfi.ee>                   
 Copyright © 2013 fraD00r4 <frad00r4@gmail.com>                   
+Copyright @ 2014 Rackspace, US, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
 this file except in compliance with the License.  You may obtain a copy of the
