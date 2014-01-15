@@ -1,4 +1,4 @@
-Timezone II
+rackspace-time
 ===========
 
 The Rackspace-time cookbook contains recipes for installing the latest tzdata
