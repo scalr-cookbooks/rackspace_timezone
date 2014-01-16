@@ -27,27 +27,27 @@ Attributes
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['tz']</tt></td>
+    <td><tt>[:rackspace_time][:tz]</tt></td>
     <td>String</td>
     <td>the timezone name as defined in tzdata</td>
     <td>UTC</td>
   </tr>
   <tr>
-    <td><tt>['timezone']['tzdata_dir']</tt></td>
+    <td><tt>[:rackspace_time][:tzdata_dir]</tt></td>
     <td>String</td>
     <td>the path to the root of the tzdata files; the default value is for
     most known distributions of Linux</td>
     <td>/usr/share/zoneinfo</td>
   </tr>
   <tr>
-    <td><tt>['timezone']['localtime_path']</tt></td>
+    <td><tt>[:rackspace_time][:localtime_path]</tt></td>
     <td>String</td>
     <td>the path to the file used by the kernel to read the local timezone's
     settings; the default works for Linux and other *ix variants</td>
     <td>/etc/localtime</td>
   </tr>
   <tr>
-    <td><tt>['timezone']['use_symlink']</tt></td>
+    <td><tt>[:rackspace_time][:use_symlink]</tt></td>
     <td>Boolean</td>
     <td>whether to use a symlink into the tzdata tree rather than make a copy
     of the appropriate timezone data file (linux-generic recipe only)</td>
@@ -65,11 +65,11 @@ recipe in your node's run list:
       "name": "my_node",
       "tz": "Africa/Timbuktu",
       "run_list": [
-        "recipe[rackspace-time]"
+        "recipe[rackspace_time]"
       ]
     }
 
-### timezone-ii::default
+### rackspace_time::default
 
 The default recipe will first install or upgrade the IANA/Olson
 timezone database package for your OS. Then it will configure the needed 
@@ -93,7 +93,7 @@ Copyright © 2010 James Harton <james@sociable.co.nz>
 Copyright © 2013 Lawrence Leonard Gilbert <larry@L2G.to>         
 Copyright © 2013 Elan Ruusamäe <glen@delfi.ee>                   
 Copyright © 2013 fraD00r4 <frad00r4@gmail.com>                   
-Copyright @ 2014 Rackspace, US, Inc.
+Copyright @ 2014 Rackspace, US Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
 this file except in compliance with the License.  You may obtain a copy of the
