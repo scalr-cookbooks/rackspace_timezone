@@ -27,27 +27,27 @@ Attributes
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>[:rackspace_time][:tz]</tt></td>
+    <td><tt>[:tz]</tt></td>
     <td>String</td>
     <td>the timezone name as defined in tzdata</td>
     <td>UTC</td>
   </tr>
   <tr>
-    <td><tt>[:rackspace_time][:tzdata_dir]</tt></td>
+    <td><tt>[:tzdata_dir]</tt></td>
     <td>String</td>
     <td>the path to the root of the tzdata files; the default value is for
     most known distributions of Linux</td>
     <td>/usr/share/zoneinfo</td>
   </tr>
   <tr>
-    <td><tt>[:rackspace_time][:localtime_path]</tt></td>
+    <td><tt>[:localtime_path]</tt></td>
     <td>String</td>
     <td>the path to the file used by the kernel to read the local timezone's
     settings; the default works for Linux and other *ix variants</td>
     <td>/etc/localtime</td>
   </tr>
   <tr>
-    <td><tt>[:rackspace_time][:use_symlink]</tt></td>
+    <td><tt>[:use_symlink]</tt></td>
     <td>Boolean</td>
     <td>whether to use a symlink into the tzdata tree rather than make a copy
     of the appropriate timezone data file (linux-generic recipe only)</td>
