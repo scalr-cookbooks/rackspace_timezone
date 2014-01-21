@@ -30,15 +30,14 @@ describe 'check rackspace_timezone default attributes' do
   end
 
   it 'check default tzdata directory' do
-  	expect(timezone['tzdata']).to eq('/usr/share/zoneinfo')
+    expect(timezone['tzdata']).to eq('/usr/share/zoneinfo')
   end
 
   it 'check location of local timezone data' do
-  	expect(timezone['localtime_path']).to eq('/etc/localtime')
+    expect(timezone['localtime_path']).to eq('/etc/localtime')
   end
 
   it 'check use of sym_link (default to false)' do
-  	expect(timezone['use_symlink']).to eq(false)
+    expect(timezone['use_symlink']).to eq(false)
   end
 end
-
