@@ -16,7 +16,7 @@ package 'tzdata' do
 end
 
 case node['platform_family']
-when 'debian', 'ubuntu'
+when 'debian'
   template '/etc/timezone' do
     source 'timezone.conf.erb'
     owner 'root'
@@ -30,7 +30,7 @@ when 'debian', 'ubuntu'
     code '/usr/sbin/dpkg-reconfigure -f noninteractive tzdata'
     action :nothing
   end
-when 'centos', 'rhel'
+when 'rhel'
   template '/etc/sysconfig/clock' do
     source 'clock.erb'
     owner 'root'

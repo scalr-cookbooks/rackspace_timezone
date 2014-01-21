@@ -17,14 +17,13 @@
 # limitations under the License.
 #
 
-default['rackspace_time']['tz'] = 'UTC'
+default['rackspace_timezone']['tz'] = 'UTC'
 
 # Path to tzdata directory
-default['rackspace_time']['tzdata'] = '/usr/share/zoneinfo'
+default['rackspace_timezone']['tzdata'] = '/usr/share/zoneinfo'
 
 # Path to file used by kernel for local timezone's data
-default['rackspace_time']['localtime_path'] = '/etc/localtime'
+default['rackspace_timezone']['localtime_path'] = '/etc/localtime'
 
 # Whether to use a symlink to tzdata (instead of copying).
-# Used only in the linux-default recipe.
-default['rackspace_time']['use_symlink'] = false
+default['rackspace_timezone']['use_symlink'] = false
