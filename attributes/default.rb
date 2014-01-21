@@ -1,5 +1,5 @@
 # encoding: utf-8
-# Author:: Christopher Coffey (<christopher.coffey@rackspace.com>) 
+# Author:: Christopher Coffey (<christopher.coffey@rackspace.com>)
 # Copyright:: Copyright (c) 2014, Rackspace, US, Inc.
 #
 # License:: Apache License, Version 2.0
@@ -9,7 +9,7 @@
 # You may obtain a copy of the License at
 #
 # http://www.apache.org/licenses/LICENSE-2.0
-# 
+#
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,14 +17,14 @@
 # limitations under the License.
 #
 
-default[:rackspace_time][:tz] = 'UTC'
+default['rackspace_time']['tz'] = 'UTC'
 
 # Path to tzdata directory
-default[:rackspace_time][:tzdata] = '/usr/share/zoneinfo'
+default['rackspace_time']['tzdata'] = '/usr/share/zoneinfo'
 
 # Path to file used by kernel for local timezone's data
-default[:rackspace_time][:localtime_path] = '/etc/localtime'
+default['rackspace_time']['localtime_path'] = '/etc/localtime'
 
 # Whether to use a symlink to tzdata (instead of copying).
 # Used only in the linux-default recipe.
-default[:rackspace_time][:use_symlink] = false
+default['rackspace_time']['use_symlink'] = false

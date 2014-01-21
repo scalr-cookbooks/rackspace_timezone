@@ -4,5 +4,5 @@ metadata
 
 group :integation do
   cookbook 'minitest-handler'
-  cookbook "apt", github: "rackspace-cookbooks/apt"
+  cookbook "rackspace_timezone", path: "."
 end
