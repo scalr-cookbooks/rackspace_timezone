@@ -27,27 +27,27 @@ Attributes
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>[:tz]</tt></td>
+    <td><tt>['tz']</tt></td>
     <td>String</td>
     <td>the timezone name as defined in tzdata</td>
     <td>UTC</td>
   </tr>
   <tr>
-    <td><tt>[:tzdata_dir]</tt></td>
+    <td><tt>['tzdata_dir']</tt></td>
     <td>String</td>
     <td>the path to the root of the tzdata files; the default value is for
     most known distributions of Linux</td>
     <td>/usr/share/zoneinfo</td>
   </tr>
   <tr>
-    <td><tt>[:localtime_path]</tt></td>
+    <td><tt>['localtime_path']</tt></td>
     <td>String</td>
     <td>the path to the file used by the kernel to read the local timezone's
     settings; the default works for Linux and other *ix variants</td>
     <td>/etc/localtime</td>
   </tr>
   <tr>
-    <td><tt>[:use_symlink]</tt></td>
+    <td><tt>['use_symlink']</tt></td>
     <td>Boolean</td>
     <td>whether to use a symlink into the tzdata tree rather than make a copy
     of the appropriate timezone data file (linux-generic recipe only)</td>
@@ -58,18 +58,18 @@ Attributes
 Usage
 -----
 
-Set the "tz" attribute to your desired timezone and include the "rackspace-time"
+Set the "tz" attribute to your desired timezone and include the "rackspace-timezone"
 recipe in your node's run list:
 
     {
       "name": "my_node",
       "tz": "Africa/Timbuktu",
       "run_list": [
-        "recipe[rackspace_time]"
+        "recipe[rackspace_timezone]"
       ]
     }
 
-### rackspace_time::default
+### rackspace_timezone::default
 
 The default recipe will first install or upgrade the IANA/Olson
 timezone database package for your OS. Then it will configure the needed 
