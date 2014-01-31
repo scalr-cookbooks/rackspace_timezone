@@ -28,6 +28,6 @@ default['rackspace_timezone']['localtime_path'] = '/etc/localtime'
 # Whether to use a symlink to tzdata (instead of copying).
 default['rackspace_timezone']['use_symlink'] = false
 
-#Location of templates
-default['rackspace_timezone']['templates_cookbook']['timezone.conf'] = "rackspace_timezone"
-default['rackspace_timezone']['templates_cookbook']['clock'] = "rackspace_timezone"
+# Location of templates
+default['rackspace_timezone']['templates_cookbook']['timezone.conf'] = 'rackspace_timezone'
+default['rackspace_timezone']['templates_cookbook']['clock'] = 'rackspace_timezone'
