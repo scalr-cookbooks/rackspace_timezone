@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-default['rackspace_timezone']['tz'] = 'UTC'
+default['rackspace_timezone']['config']['tz'] = 'UTC'
 
 # Path to tzdata directory
 default['rackspace_timezone']['tzdata'] = '/usr/share/zoneinfo'
