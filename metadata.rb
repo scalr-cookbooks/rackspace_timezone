@@ -1,19 +1,11 @@
-name             "timezone-ii"
-maintainer       "Lawrence Leonard Gilbert"
-maintainer_email "larry@L2G.to"
-license          "Apache 2.0"
-description      "Configure the system timezone on Linux systems"
-version          "0.2.0"
+# encoding: UTF-8
+name             'rackspace_timezone'
+maintainer       'Rackspace, US, Inc.'
+maintainer_email 'rackspace-cookbooks@rackspace.com'
+license          'Apache 2.0'
+description      'Configure the system timezone on Linux systems'
+version          '1.0.0'
 
-replaces         "timezone"
+recipe 'rackspace_timezone', 'Set time zone details on server'
 
-# These are platform versions where this cookbook has been tested at some point
-# in time
-supports "amazon"
-supports "centos"
-supports "debian"
-supports "fedora"
-supports "gentoo"
-supports "ubuntu"
-supports "pld"
-supports "rhel"
+replaces         'timezone'

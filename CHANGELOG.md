@@ -2,6 +2,12 @@
 
 This file is used to list changes made in each version of timezone-ii.
 
+## 1.0.0
+* Switch namespace to rackspace_timzone
+* remove unsupported features and OS's
+* Add standard testing suite
+* Add cookbook templates location as attribute
+
 ## Work in progress:
 
 * Added experimental support for PLD (https://www.pld-linux.org; thanks to Elan

@@ -1,8 +1,6 @@
-site :opscode
-
 metadata
 
 group :integation do
+  cookbook 'rackspace_apt', github: "rackspace-cookbooks/rackspace_apt"
   cookbook 'minitest-handler'
-  cookbook "apt", github: "rackspace-cookbooks/apt"
 end
