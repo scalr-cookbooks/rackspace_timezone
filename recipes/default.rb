@@ -18,6 +18,7 @@ end
 case node['platform_family']
 when 'debian'
   template '/etc/timezone' do
+    cookbook node['rackspace_timezone']['templates_cookbook']['timezone.conf']
     source 'timezone.conf.erb'
     owner 'root'
     group 'root'
@@ -32,6 +33,7 @@ when 'debian'
   end
 when 'rhel'
   template '/etc/sysconfig/clock' do
+    cookbook node['rackspace_timezone']['templates_cookbook']['clock']
     source 'clock.erb'
     owner 'root'
     group 'root'
