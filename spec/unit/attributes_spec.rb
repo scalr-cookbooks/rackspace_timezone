@@ -26,7 +26,7 @@ describe 'check rackspace_timezone default attributes' do
   let(:timezone) { chef_run.node['rackspace_timezone'] }
 
   it 'check default timezone' do
-    expect(timezone['tz']).to eq('UTC')
+    expect(timezone['config']['tz']).to eq('UTC')
   end
 
   it 'check default tzdata directory' do

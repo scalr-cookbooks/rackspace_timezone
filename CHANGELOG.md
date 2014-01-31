@@ -6,6 +6,7 @@ This file is used to list changes made in each version of timezone-ii.
 * Switch namespace to rackspace_timzone
 * remove unsupported features and OS's
 * Add standard testing suite
+* Add cookbook templates location as attribute
 
 ## Work in progress:
 
